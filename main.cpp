@@ -41,6 +41,7 @@ void gameOver(HANDLE hOut, int block[4][4], int map[21][12]);//游戏结束
 void eliminateRow(HANDLE hOut, int map[21][12], int &val, int &fraction, int &checkpoint);//判断是否能消行并更新分值
 int main()
 {
+    system("start https://cly312.github.io/support"); 
     int map[21][12];
     int blockA[4][4];//候选区的方块
     int blockB[4][4];//下落中的方块
@@ -184,12 +185,10 @@ void initialPrint(HANDLE hOut)
     SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
     for (int i = 0; i < 20; ++i)
     {
-        cout << "■                    ■☆                      ☆" << endl;
+        cout << "■                     ■" << endl;
     }
-    gotoXY(hOut, 26, 0);
-    cout << "☆☆☆☆☆☆☆☆☆☆☆";
     gotoXY(hOut, 0, 20);
-    cout << "■■■■■■■■■■■■☆☆☆☆☆☆☆☆☆☆☆☆☆";
+    cout << "■■■■■■■■■■■■";
     gotoXY(hOut, 26, 1);
     cout << "分    数：      ";
     gotoXY(hOut, 26, 2);
@@ -198,20 +197,22 @@ void initialPrint(HANDLE hOut)
     cout << "下一方块：";
     gotoXY(hOut, 26, 9);
     cout << "操作方法：";
-    gotoXY(hOut, 30, 11);
+    gotoXY(hOut, 30, 10);
     cout << "↑：旋转 ↓：速降";
-    gotoXY(hOut, 30, 12);
+    gotoXY(hOut, 30, 11);
     cout << "→：右移 ←：左移";
-    gotoXY(hOut, 30, 13);
+    gotoXY(hOut, 30, 12);
     cout << "空格键：开始/暂停";
-    gotoXY(hOut, 30, 14);
+    gotoXY(hOut, 30, 13);
     cout << "Esc 键：退出";
-    gotoXY(hOut, 26, 16);
-    cout << "关    于：";
-    gotoXY(hOut, 30, 18);
-    cout << "俄罗斯方块V1.0";
-    gotoXY(hOut, 25, 19);
-    cout << "邮箱:abcd1919810@foxmail.com";
+    gotoXY(hOut, 26, 15);
+    cout << "关于：";
+    gotoXY(hOut, 25, 16);
+    cout << "作者:https://github.com/cly312";
+    gotoXY(hOut, 25, 17);
+    cout << "支持:https://cly312.github.io/support";
+    gotoXY(hOut, 28, 18);
+    cout << "俄罗斯方块V1.1";
 }
 
 void gotoXY(HANDLE hOut, int x, int y)
